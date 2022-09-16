@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +18,7 @@ namespace projectnorthwindC
         private int unitsInStock = -1;
         private int unitsOnOrder = -1;
         private int reOrderLevel = -1;
-        private bool discontinued = true;
+        private bool discontinued = false;
 
         // getting and set
         public int ProductId
@@ -146,8 +146,35 @@ namespace projectnorthwindC
         public bool Discontinued
         {
             get { return this.discontinued; }
-            set { this.discontinued = true; }
+            set { this.discontinued = false; }
         }
+
+
+        public Product():this(-1,"n/a",-1,-1,"n/a",0.0,-1,-1,-1,false)
+        {
+            //empty constructoe
+        }
+        public Product(int aProductId, string aProductName, int aSupplierId):this(aProductId, aProductName, aSupplierId, - 1, "n/a", 0.0, -1, -1, -1, false)
+        {
+            //partial constructoe
+        }
+
+        public Product(int aProductId, string aProductName, int aSupplierId, int aCatagoryId, string aQuantityPerUnit, double aUnitprice, int aUnitsInStock, int aUnitsOnOrder, int aReOrderLevel, bool aDiscontinued)
+        { 
+            this.ProductId = aProductId;
+            this.ProductName = aProductName;
+            this.SupplierId = aSupplierId;
+            this.CatagoryId = aCatagoryId;
+            this.QuantityPerUnit = aQuantityPerUnit;
+            this.Unitprice = aUnitprice;
+            this.UnitsInStock = aUnitsInStock;
+            this.UnitsOnOrder = aUnitsOnOrder;
+            this.ReOrderLevel = aReOrderLevel;
+            this.Discontinued = aDiscontinued;
+
+        }
+
+
 
         // Creating a Tostring
         public override string ToString()
