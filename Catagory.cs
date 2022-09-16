@@ -53,17 +53,17 @@ namespace projectnorthwindC
         {
             //empty constructor
         }
-        public Catagory(int acatagoryId):this( acatagoryId, "n/a","n/a")
+        public Catagory(int aCatagoryId):this( aCatagoryId, "n/a","n/a")
         {
             //partial constructor
         }
         
         //full constructor
-        public Catagory(int acatagoryId, string acatagoryName, string adescription)
+        public Catagory(int aCatagoryId, string aCatagoryName, string aDescription)
         {
-            this.CatagoryId = acatagoryId;
-            this.CatagoryName = acatagoryName;
-            this.Description = adescription;
+            this.catagoryId = aCatagoryId;
+            this.catagoryName = aCatagoryName;
+            this.description = aDescription;
           
         }
         // overrride to tostring
