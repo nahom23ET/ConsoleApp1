@@ -1,4 +1,4 @@
-﻿//Nahom Tefera
+//Nahom Tefera
 // 08/26/2026
 
 using System;
@@ -49,6 +49,24 @@ namespace projectnorthwindC
             set { this.description = value;  }
         }
 
+        public Catagory():this(-1,"n/a","n/a")
+        {
+            //empty constructor
+        }
+        public Catagory(int acatagoryId):this( acatagoryId, "n/a","n/a")
+        {
+            //partial constructor
+        }
+        
+        //full constructor
+        public Catagory(int acatagoryId, string acatagoryName, string adescription)
+        {
+            this.CatagoryId = acatagoryId;
+            this.CatagoryName = acatagoryName;
+            this.Description = adescription;
+          
+        }
+        // overrride to tostring
         public override string ToString()
         {
             string message = " ";
