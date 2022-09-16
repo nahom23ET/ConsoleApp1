@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +12,9 @@ namespace projectnorthwindC
         private int orderId = -1;
         private string customerId = "n/a";
         private int employeeId = -1;
-        private DateTime orederDate;
-        private DateTime requireDate;
-        private DateTime shippedDate;
+        private string orederDate= "n/a";
+        private string requireDate= "n/a";
+        private string shippedDate= "n/a";
         private int shipVia = -1;
         private double freight = 0;
         private string shipName = "n/a";
@@ -68,19 +68,19 @@ namespace projectnorthwindC
 
         }
 
-        public DateTime OrederDate
+        public string OrederDate
         {
             get { return this.orederDate; }
             set { this.orederDate = value; }
         }
 
-        public DateTime RequiredDate
+        public string RequiredDate
         {
             get { return this.requireDate; }
             set { this.requireDate = value; }
         }
 
-        public DateTime ShippedDate
+        public string ShippedDate
         {
             get {  return this.shippedDate; }
             set { this.shippedDate = value; }
@@ -153,6 +153,39 @@ namespace projectnorthwindC
             get { return this.shipCountry; }
             set { this.shipCountry = value; }
         }
+
+       
+       
+      
+        public Order():this(-1, "n/a", -1, "n/a","n/a","n/a", -1, 0, "n/a","n/a","n/a","n/a","n/a", "n/a")
+        {
+            //Empty Constructor
+        }
+
+        public Order(int aOrderId, string aCustomerId, int aEmployeeId) : this(aOrderId, aCustomerId, aEmployeeId, "n/a", "n/a", "n/a", -1, 0, "n/a", "n/a", "n/a", "n/a", "n/a", "n/a")
+        {
+            //partial Constructor
+        }
+        //full constructor
+        public Order(int aOrderId, string aCustomerId, int aEmployeeId, string aOrederDate, string aRequireDate, string aShippedDate, int aShipVia, double aFreight, string aShipName, string aShipAddress, string aShipCity, string aShipRegion, string aShipPostalCode, string aShipCountry)
+        {
+            this.OrderId = aOrderId;
+            this.CustomerId = aCustomerId;
+            this.EmployeeId = aEmployeeId;
+            this.OrederDate = aOrederDate;
+            this.requireDate = aRequireDate;
+            this.ShippedDate = aShippedDate;
+            this.ShipVia = aShipVia;
+            this.Freight = aFreight;
+            this.ShipName = aShipName;
+            this.ShipAddress = aShipAddress;
+            this.ShipCity = aShipCity;
+            this.ShipRegion = aShipRegion;
+            this.ShipPostalCode = aShipPostalCode;
+            this.ShipCountry = aShipCountry;
+        }
+
+
         // Creating a To string
         public override string ToString()
         {
