@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -107,6 +107,29 @@ namespace projectnorthwindC
                 }
             }
         }
+
+        public OrderDetail():this(-1,-1,0.0,0,0.0)
+        {
+            //empty constructor
+        }
+
+        public OrderDetail(int aOrderId, int aProductId) : this(aOrderId, aProductId, 0.0, 0, 0.0)
+        {
+            //partial constructor
+        }
+
+
+        // full constructor
+        public OrderDetail(int aOrderId, int aProductId, double aUnitPrice, int aQuantity, double aDiscount)
+        {
+            this.OrderId = aOrderId;
+            this.ProductId = aProductId;
+            this.UnitPrice = aUnitPrice;
+            this.Quantity = aQuantity;
+            this.Discount = aDiscount;
+          
+        }
+
         // overriding to string
         public override string ToString()
         {
