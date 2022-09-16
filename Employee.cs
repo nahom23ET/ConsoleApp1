@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,11 +14,8 @@ namespace projectnorthwindC
         private string firstName = "n/a";
         private string title = "n/a";
         private string titleOfCourtesy = "n/a";
-        private DateTime birthDay;
-        //private int birthDay = 31;
-        //private int birthMonth = 12;
-        //private int birthYear = 1900;
-        private DateTime hireDay;
+        private string birthDay ="n/a";
+        private string hireDay = "n/a";
         private string address = "n/a";
         private string city = "n/a";
         private string region = "n/a";
@@ -73,13 +70,13 @@ namespace projectnorthwindC
             set { this.titleOfCourtesy = value; }
         }
 
-        public DateTime BirthDay
+        public string BirthDay
         {
             get { return this.birthDay; }
             set { this.birthDay = value; }
         }
 
-        public DateTime Hireday
+        public string Hireday
         {
             get { return this.hireDay; }
             set { this.hireDay = value; }
@@ -141,6 +138,65 @@ namespace projectnorthwindC
                     this.reportsTo = -1;
                 }
             }
+        }
+        public Employee():this(-1,"n/a","n/a","n/a","n/a","n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a",-1)
+        {
+            // empty constructor
+        }
+
+        public Employee(int anEmployeeId, string aLastName, string aFirstName) : this(anEmployeeId, aLastName, aFirstName, "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", -1)
+        {
+            // partial constructor
+        }
+
+
+        //full constractro
+        public Employee(int anEmployeeId, string aLastName, string aFirstName, string aTitle, string aTitleOfCourtesy, string aBirthDay, string aHireDay, string anAddress, string aCity, string aRegion, string aPostalCode, string aCountry, string aHomePhone, string anExtension, string aNotes, int aReportsTo)
+        { 
+            this.EmployeeId = anEmployeeId;
+            this.LastName = aLastName;
+            this.FirstName = aFirstName;
+            this.Title = aTitle;
+            this.TitleOfCourtesy = aTitleOfCourtesy;
+            this.BirthDay = aBirthDay;
+            this.hireDay = aHireDay;
+            this.Address = anAddress;
+            this.City = aCity;
+            this.Region = aRegion;
+            this.PostalCode = aPostalCode;
+            this.Country = aCountry;
+            this.HomePhone = aHomePhone;
+            this.Extension = anExtension;
+            this.Notes = aNotes;
+            this.ReportsTo = aReportsTo;
+         
+        }
+
+
+
+
+        //To string override
+        public override string ToString()
+        {
+            string message=" ";
+            message = message + "employeeId: " + this.employeeId + "n/a";
+            message = message + "lastName: " + this.lastName + "n/a";
+            message = message + "firstName: " + this.firstName + "n/a";
+            message = message + "title: " + this.title + "n/a";
+            message = message + "titleOfCourtesy: " + this.titleOfCourtesy + "n/a";
+            message = message + "birthDay: " + this.birthDay + "n/a";
+            message = message + "hireDay: " + this.hireDay + "n/a";
+            message = message + "address: " + this.address + "n/a";
+            message = message + "city: " + this.city + "n/a";
+            message = message + "region: " + this.region + "n/a";
+            message = message + "postalCode: " + this.postalCode + "n/a";
+            message = message + "country: " + this.country + "n/a";
+            message = message + "postalCode: " + this.postalCode + "n/a";
+            message = message + "homePhone: " + this.homePhone + "n/a";
+            message = message + "extension: " + this.extension + "n/a";
+            message = message + "notes: " + this.notes + "n/a";
+            message = message + "reportsTo: " + this.reportsTo + "n/a";
+            return message;
         }
     }   
     
