@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -78,6 +78,30 @@ namespace projectnorthwindC
         {
             get { return this.fax; }
             set { this.fax = value; }
+        }
+        public Customer():this("n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a")
+        {
+            //empty constructor
+        }
+        public Customer(string acustomerId, string acompanyName) :this(acustomerId, acompanyName, "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a")
+        {
+         // partial constructor
+        }
+
+        public Customer(string acustomerId, string acompanyName, string acontactName, string acontactTitle, string aaddress, string acity, string aregion, string apostalCode, string acountry, string aphone, string afax)
+        {
+            this.CustomerId = acustomerId;
+            this.CompanyName = acompanyName;
+            this.ContactName = acontactName;
+            this.ContactTitle = acontactTitle;
+            this.Address = aaddress;
+            this.City = acity;
+            this.Region = aregion;
+            this.PostalCode = apostalCode;
+            this.Country = acountry;
+            this.Phone = aphone;
+            this.Fax = afax;
+            
         }
 
         // To string
