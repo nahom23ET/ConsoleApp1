@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -103,7 +103,37 @@ namespace projectnorthwindC
         {
             get{ return this.homePage; }
             set { this.homePage = value; }
+
         }
+        public Supplier():this(-1, "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a")
+        {
+            // empty constructor
+        }
+
+        public Supplier(int aSupplierId, string aCompanyName, string aContactName, string aContactTitle):this(aSupplierId, aCompanyName, aContactName, aContactTitle, "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a")
+        {
+            // partial constructor
+        }
+
+        //full constructor
+        public Supplier(int aSupplierId, string aCompanyName, string aContactName, string aContactTitle, string anAddress, string aCity, string aRegion, string aPostalCode, string aCountry, string aPhone, string aFax, string aHomePage)
+        {
+            this.SupplierId = aSupplierId;
+            this.CompanyName = aCompanyName;
+            this.ContactName = aContactName;
+            this.ContactTitle = aContactTitle;
+            this.Address = anAddress;
+            this.City = aCity;
+            this.Region = aRegion;
+            this.PostalCode = aPostalCode;
+            this.Country = aCountry;
+            this.Phone = aPhone;
+            this.Fax = aFax;
+            this.HomePage = aHomePage;
+
+        }
+
+
         // creating a override Tostring
         public override string ToString()
         {
