@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,7 +42,24 @@ namespace projectnorthwindC
             set { this.phone = value; }
         }
 
-        
+        public Shipper():this(-1,"n/a","n/a")
+        {
+            //empty constructor
+        }
+        public Shipper(int aShipperId):this(aShipperId, "n/a", "n/a")
+        {
+            // partial constructor 
+        }
+
+        // full constructor
+        public Shipper(int aShipperID, string aCompanyName, string aPhone)
+        {
+            this.ShipperID = aShipperID;
+            this.CompanyName = aCompanyName;
+            this.Phone = aPhone;
+        }
+
+
         // creating a Tostring
         public override string ToString()
         {
